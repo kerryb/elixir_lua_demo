@@ -1,0 +1,4 @@
+%{
+  "lua": {:hex, :lua, "0.2.1", "30623dadccd899d9de7c0233028b065d0cfd1b669769ee0f95992f50626136ed", [:mix], [{:luerl, "~> 1.4.1", [hex: :luerl, repo: "hexpm", optional: false]}], "hexpm", "1e8ddbc4242897f73af5bb122a04a12a1339ca6ed0a60e0f521944a27b7a9ce9"},
+  "luerl": {:hex, :luerl, "1.4.1", "0018b5002849a3ba401bc2dc5a67e45de4c404aacfd1b9d3c2fc50fde599ff12", [:rebar3], [], "hexpm", "618ff8967d23d8f8d5800a3784625aeafba7fa42648fd9af4f05fcd1383cb860"},
+}
