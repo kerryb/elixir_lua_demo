@@ -4,12 +4,19 @@ defmodule DemoTest do
 
   describe "Demo" do
     test "Executes some lua code, exposing avariable and allowing it to call back to an Elixir function" do
-      script = """
+      script = ~S"""
       return "Hello, " .. name .. "! I’m " .. demo.my_name() .. "."
       """
 
-      {[result], _state} = Demo.greet(script, "Kerry")
-      assert result == "Hello, Kerry! I’m an Elixir Lua demo."
+      assert ["Hello, Kerry! I’m an Elixir Lua demo."] = Demo.greet(script, "Kerry")
+    end
+
+    test "allows lua code to use real regular expressions" do
+      script = ~S"""
+      return demo.get_matches(input, demo.regex("(\\d+)"))
+      """
+
+      assert ["42", "123"] = Demo.scan(script, "Foo 42 bar 123 baz")
     end
   end
 end
