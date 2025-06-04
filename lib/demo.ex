@@ -1,6 +1,6 @@
 defmodule Demo do
   @moduledoc false
-  use Lua.API, scope: "demo"
+  use Lua.API
 
   deflua my_name, do: "an Elixir Lua demo"
 
