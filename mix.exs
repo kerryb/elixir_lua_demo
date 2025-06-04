@@ -19,7 +19,8 @@ defmodule Demo.MixProject do
 
   defp deps do
     [
-      {:lua, "~> 0.2"}
+      {:lua, "~> 0.2"},
+      {:styler, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
 end

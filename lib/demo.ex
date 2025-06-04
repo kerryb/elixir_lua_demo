@@ -1,4 +1,5 @@
 defmodule Demo do
+  @moduledoc false
   use Lua.API, scope: "demo"
 
   deflua my_name, do: "an Elixir Lua demo"
@@ -9,7 +10,7 @@ defmodule Demo do
 
   deflua get_matches(string, encoded_regex), lua do
     {:userdata, regex} = Lua.decode!(lua, encoded_regex)
-    Regex.scan(regex, string, capture: :all_but_first) |> List.flatten()
+    regex |> Regex.scan(string, capture: :all_but_first) |> List.flatten()
   end
 
   def greet(script, name) do
